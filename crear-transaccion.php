@@ -30,7 +30,7 @@ $valor_uso_interno = isset($_POST['valor_uso_interno']) ? $_POST['valor_uso_inte
 
 $monto = isset($_POST['monto']) ? $_POST['monto'] : NULL; // Monto de la transacción. Máximo 2 decimales para USD. Largo máximo: 17
 
-$url_retorno = 'https://la-tienda.com/retorno.php'; // URL del comercio, a la cual Webpay redireccionará posterior al proceso de autorización. Largo máximo: 256
+$url_retorno = 'la-url-de-tu-integracion/retorno.php'; // URL del comercio, a la cual Webpay redireccionará posterior al proceso de autorización. Largo máximo: 256
 
 /** Generamos la URL completa para consumir el servicio */
 $url_transaccion = $webpayplus_url;
@@ -39,9 +39,9 @@ $url_transaccion = $webpayplus_url;
 $data_a_enviar = json_encode(
 	array(
 		'buy_order'		=> $id_compra,
-		'session_id'	=> $valor_uso_interno,
+		'session_id'		=> $valor_uso_interno,
 		'amount'		=> $monto,
-		'return_url'	=> $url_retorno
+		'return_url'		=> $url_retorno
 	)
 );
 
