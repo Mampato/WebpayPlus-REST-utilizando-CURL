@@ -32,8 +32,8 @@ $url_transaccion = $webpayplus_url.$token_ws.'/capture';
 $data_a_enviar = json_encode(
 	array(
 		'commerce_code'			=> $commerce_code,
-		'buy_order'				=> $buy_order,
-		'authorization_code'	=> $authorization_code,
+		'buy_order'			=> $buy_order,
+		'authorization_code'		=> $authorization_code,
 		'capture_amount'		=> $capture_amount
 	)
 );
@@ -63,7 +63,7 @@ $resp = json_decode($result,true);
 curl_close($curl);
 
 /** Obtenemos los datos desde la respuesta. */
-$token				= $resp['token'];
+$token			= $resp['token'];
 $authorization_code	= $resp['authorization_code'];
 $authorization_date	= $resp['authorization_date'];
 $captured_amount	= $resp['captured_amount'];
