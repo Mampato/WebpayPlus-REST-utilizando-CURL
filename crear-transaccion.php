@@ -30,7 +30,7 @@ $valor_uso_interno = isset($_POST['valor_uso_interno']) ? $_POST['valor_uso_inte
 
 $monto = isset($_POST['monto']) ? $_POST['monto'] : NULL; // Monto de la transacción. Máximo 2 decimales para USD. Largo máximo: 17
 
-$url_retorno = 'https://bastidas.cl/webpayplus-rest/retorno.php'; // URL del comercio, a la cual Webpay redireccionará posterior al proceso de autorización. Largo máximo: 256
+$url_retorno = 'https://la-tienda.com/retorno.php'; // URL del comercio, a la cual Webpay redireccionará posterior al proceso de autorización. Largo máximo: 256
 
 /** Generamos la URL completa para consumir el servicio */
 $url_transaccion = $webpayplus_url;
@@ -96,7 +96,7 @@ if (!empty($url) AND !empty($token)) {
 	exit;
 } else {
 	/** Si hubo un error al generar el TOKEN, enviamos al cliente a la página de error. */
-	header('Location: https://bastidas.cl/webpayplus-rest/pagina-de-error-en-el-pago.php');
+	header('Location: pagina-de-error-en-el-pago.php');
 	exit;
 }
 ?>
