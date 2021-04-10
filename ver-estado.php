@@ -48,16 +48,16 @@ $resp = json_decode($result,true);
 curl_close($curl);
 
 /** Obtenemos los datos desde la respuesta. */
-$status				= $resp['status'];
-$buy_order			= $resp['buy_order'];
-$amount				= $resp['amount'];
-$vci				= $resp['vci'];
-$sessionId			= $resp['session_id'];
+$status			= $resp['status'];
+$buy_order		= $resp['buy_order'];
+$amount			= $resp['amount'];
+$vci			= $resp['vci'];
+$sessionId		= $resp['session_id'];
 $authorizationCode	= $resp['authorization_code'];
 $paymentTypeCode	= $resp['payment_type_code'];
 $responseCode		= $resp['response_code'];
 $installmentsNumber	= $resp['installments_number'];
-$cardNumber			= $resp['card_detail']['card_number'];
+$cardNumber		= $resp['card_detail']['card_number'];
 $accountingDate		= $resp['accounting_date'];
 $transactionDate	= $resp['transaction_date'];
 
