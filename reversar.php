@@ -28,7 +28,7 @@ $url_transaccion = $webpayplus_url.$token_ws.'/refunds';
 /** Generamos el arreglo con los datos a enviar */
 $data_a_enviar = json_encode(
 	array(
-		'amount'		=> $amount
+		'amount'	=> $amount
 	)
 );
 
@@ -59,11 +59,11 @@ $resp = json_decode($result,true);
 curl_close($curl);
 
 /** IMPORTANTE: Estos datos son devueltos sólo si el "type" es "NULLIFIED" */
-$type				= $resp['type'];
+$type			= $resp['type'];
 $authorization_code	= $resp['authorization_code'];
 $authorization_date	= $resp['authorization_date'];
 $nullified_amount	= $resp['nullified_amount'];
-$balance			= $resp['balance'];
+$balance		= $resp['balance'];
 $response_code		= $resp['response_code'];
 
 /** Generamos valores para este ejemplo. */
